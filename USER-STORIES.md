@@ -20,4 +20,20 @@
 
 ## Features to display on landing page
 
+1. Adding events
+2. Customizable themes
+3. Access to the calendar snapshot and adding events without leaving the original website.
+4. Google calendar integration
+5. Editing existing events
+6. Seamless event collaboration
+
 ## Features to illustrate
+
+I will illustrate all 6 of the features to display on the website
+
+* Adding events
+* Customizable themes
+* Access to the calendar snapshot and adding events without leaving the original website.
+* Google calendar integration
+* Editing existing events
+* Seamless event collaboration
