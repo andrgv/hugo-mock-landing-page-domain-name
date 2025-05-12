@@ -3,6 +3,7 @@
 ## Author: Jérémie Lumbroso <lumbroso@seas.upenn.edu>
 ## Date: 2024-02-24
 #######################################################
+
 name: 🏗️ Build and Deploy GitHub Pages
 
 permissions:
@@ -12,7 +13,7 @@ permissions:
 on:
   push:
     branches:
-      - main # set a branch to deploy
+      - main # Set a branch to deploy
 
 jobs:
   deploy:
@@ -21,23 +22,20 @@ jobs:
       - name: 🔄 Check Out Source Repository
         uses: actions/checkout@v3.5.1
         with:
-          submodules: true
-          fetch-depth: 0
+          submodules: true # fetch hugo themes
+          fetch-depth: 0   # fetch all history for .GitInfo and .Lastmod
 
       - name: 🛠️ Initialize Hugo Environment
         uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: '0.144.1'
+          hugo-version: "0.144.1"
           extended: true
 
       - name: 🏗️ Compile Hugo Static Files
-        run: hugo -D --gc --minify --baseURL='https://quickcal.site/'
+        run: hugo -D --gc --minify --baseURL='quickcal.site'
         working-directory: ${{ github.workspace }}
-
-      - name: 🏡 Alias landing page as root index
-        run: cp public/page/index.html public/index.html
-
-      - name: 📂 Check built site output
+      
+      - name: Check built site output
         run: ls -lah public/
 
       - name: 🚀 Publish to GitHub Pages
