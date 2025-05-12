@@ -28,7 +28,7 @@ jobs:
           extended: true
 
       - name: 🏗️ Compile Hugo Static Files
-        run: hugo -D --gc --minify
+          run: hugo -D --gc --minify --baseURL="https://andrgv.github.io/hugo-mock-landing-page-autodeployed/"
 
       - name: 🚀 Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
