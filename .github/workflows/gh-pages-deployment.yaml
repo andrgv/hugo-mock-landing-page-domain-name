@@ -34,6 +34,9 @@ jobs:
         run: hugo -D --gc --minify --baseURL='https://quickcal.site/'
         working-directory: ${{ github.workspace }}
 
+      - name: 🏡 Alias landing page as root index
+        run: cp public/page/index.html public/index.html
+
       - name: 📂 Check built site output
         run: ls -lah public/
 
