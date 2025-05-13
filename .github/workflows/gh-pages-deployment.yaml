@@ -32,12 +32,13 @@ jobs:
           extended: true
 
       - name: 🏗️ Compile Hugo Static Files
-        run: hugo -D --gc --minify --baseURL='quickcal.site' --cleanDestinationDir
+        run: hugo -D --gc --minify --baseURL='http://quickcal.site' --cleanDestinationDir
         working-directory: ${{ github.workspace }}
       
       - name: Check built site output
         run: |
           ls -lah public/
+          ls -lah public/css/ # Verify CSS files
           cat public/index.html # Verify the generated index.html file
 
       - name: 🚀 Publish to GitHub Pages
